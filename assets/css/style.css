@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+    :root {
+      --primary-blue: #2563eb;
+      --slate-950: #020617;
+      --slate-900: #0f172a;
+    }
+
+    * { border-radius: 0 !important; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .mono { font-family: 'Fira Code', monospace; }
+    .modal-active { overflow: hidden; }
+
+    .fade-in { animation: tabEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    
+    @keyframes tabEnter {
+      from { opacity: 0; transform: translateY(15px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .filter-btn.active {
+      background-color: var(--slate-900);
+      color: white;
+      border-color: var(--slate-900);
+    }
+
+    .compactDeploymentSwiper { height: 480px; width: 100%; }
+    .compactDeploymentSwiper .swiper-slide {
+      height: 33.33% !important;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    @media print {
+      nav, .filter-btn, #gallery, button, footer, #enquiryModal, .swiper-button-custom { display: none !important; }
+      body { background: white; color: black; }
+      .bg-slate-900, .bg-slate-950 { background: #0f172a !important; color: white !important; -webkit-print-color-adjust: exact; }
+      #experience, #background { padding: 0; margin-top: 10px; }
+    }
+
+    @media (max-width: 768px) {
+      .infra-scroll-viewport { max-height: 400px; }
+    }
+    #menuIcon {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    @media (max-height: 700px) {
+      #lightboxImg {
+        max-height: 60vh;
+      }
+      #lightbox {
+        padding-top: 5rem;
+      }
+    }

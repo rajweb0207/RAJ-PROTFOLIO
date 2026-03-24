@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajkumar Gautam | Senior Full-Stack Lead</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+  <nav class="fixed w-full bg-white/90 backdrop-blur-md z-[100] border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="text-xl font-black tracking-tighter uppercase">
+        RG<span class="text-blue-600">.Dev</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+        <a href="#stack" class="hover:text-blue-600 transition">Stack</a>
+        <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
+        <a href="#gallery" class="hover:text-blue-600 transition">Archive</a>
+        <button onclick="toggleModal()" class="bg-slate-900 text-white px-6 py-2.5 hover:bg-blue-600 transition uppercase tracking-tighter font-black">Hire_Me</button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-slate-900 p-2 w-10 h-10 flex items-center justify-center">
+        <i id="menuIcon" class="fas fa-bars text-xl transition-transform duration-300"></i>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden flex-col md:hidden bg-white border-t border-slate-100 px-6 py-8 space-y-6 shadow-2xl absolute w-full left-0 top-20 fade-in">
+      <a href="#experience" class="block text-sm font-black uppercase tracking-widest text-slate-900 border-b border-slate-50 pb-3" onclick="toggleMobileMenu()">Experience</a>
+      <a href="#stack" class="block text-sm font-black uppercase tracking-widest text-slate-900 border-b border-slate-50 pb-3" onclick="toggleMobileMenu()">Tech Stack</a>
+      <a href="#gallery" class="block text-sm font-black uppercase tracking-widest text-slate-900 border-b border-slate-50 pb-3" onclick="toggleMobileMenu()">Archives</a>
+      <button onclick="toggleModal(); toggleMobileMenu();" class="w-full bg-blue-600 text-white py-4 font-black uppercase tracking-widest text-xs">Work With Me</button>
+    </div>
+  </nav>
+  <!-- hero section -->
+  <section class="pt-24 md:pt-40 pb-16 px-6 bg-white">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+      <div class="fade-in">
+        <span class="inline-block bg-blue-50 text-blue-600 px-4 py-1.5 text-[10px] md:text-xs font-bold mono uppercase tracking-widest border-l-4 border-blue-600">
+          Available for Senior Roles
+        </span>
+        
+        <h1 class="text-4xl md:text-6xl font-bold mt-6 mb-6 leading-tight text-slate-900 tracking-tighter">
+          Architecting <span class="text-slate-400">Scalable</span> Web Systems.
+        </h1>
+        
+        <p class="text-base md:text-lg text-slate-600 mb-8 leading-relaxed max-w-xl">
+          Senior Full-Stack Developer with <strong class="text-slate-900">5.5+ years</strong> of engineering excellence. Specialist in <strong class="text-slate-900">Laravel & Modern JavaScript Ecosystems</strong>, Server Management, and Advanced Architecture.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://www.linkedin.com/in/raj-kumar-gautam-6ab847202" target="_blank"
+            class="w-full sm:w-auto bg-slate-950 text-white px-8 py-3.5 font-bold text-sm uppercase tracking-widest hover:bg-blue-600 transition flex items-center justify-center gap-3 shadow-lg shadow-slate-200">
+            <i class="fab fa-linkedin-in text-base"></i> LinkedIn
+          </a>
+          <a href="https://github.com/rajweb0207" target="_blank"
+            class="w-full sm:w-auto border border-slate-300 text-slate-900 px-8 py-3.5 font-bold text-sm uppercase tracking-widest hover:bg-slate-50 transition flex items-center justify-center gap-3">
+            <i class="fab fa-github text-base"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden md:block fade-in" style="animation-delay: 0.2s;">
+        <div class="bg-slate-950 p-8 shadow-2xl md:rotate-2 relative group overflow-hidden">
+          <div class="absolute top-0 right-0 p-4 opacity-10">
+            <i class="fas fa-code text-4xl text-white"></i>
+          </div>
+          
+          <div class="flex gap-2 mb-6">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div>
+          
+          <div class="mono text-xs md:text-sm leading-relaxed">
+            <code class="text-blue-400 block mb-2 mono text-xs md:text-sm">
+              class 
+              <span class="text-yellow-400">RajkumarGautam</span> 
+              {</code>
+            <code class="text-slate-300 block pl-4 mono text-xs md:text-sm">
+              public $experience = 
+              <span class="text-green-400">"5.5 + Years"</span>
+              ;
+            </code>
+            <code class="text-slate-300 block pl-4 mono text-xs md:text-sm">public $stack = [<span class="text-green-400">'Laravel', 'React', 'Node', 'Python'</span>];</code>
+            <code class="text-blue-400 block mono text-xs md:text-sm">}</code>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- tech-stack section -->
+  <section id="stack" class="py-24 bg-white border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-12">
+        
+        <div class="lg:col-span-3 space-y-8">
+          <div class="mb-4">
+            <h2 class="text-xl md:text-3xl font-black text-slate-900 tracking-tight uppercase italic">
+              Technical <span class="text-slate-400">Infrastructure</span>
+            </h2>
+            <p class="text-slate-500 mt-2 mono text-xs tracking-[0.3em] uppercase">// Core Engineering Competencies</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="group p-8 border border-slate-200 hover:border-blue-600 hover:bg-slate-50 transition-all duration-300 flex flex-col h-full shadow-sm">
+              <div class="w-12 h-12 bg-slate-900 text-white flex items-center justify-center mb-6 transition-colors group-hover:bg-blue-600">
+                <i class="fas fa-microchip text-xl"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-4 uppercase tracking-tight">Core Engineering</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-white text-slate-700 text-[10px] font-bold border border-slate-200 uppercase">Data Structures</span>
+                <span class="px-2 py-1 bg-white text-slate-700 text-[10px] font-bold border border-slate-200 uppercase">OOP Design</span>
+                <span class="px-2 py-1 bg-white text-slate-700 text-[10px] font-bold border border-slate-200 uppercase">Algorithms</span>
+                <span class="px-2 py-1 bg-blue-50 text-blue-700 text-[10px] font-bold border border-blue-100 uppercase">C / Java / Python</span>
+              </div>
+            </div>
+
+            <div class="group p-8 border border-slate-200 hover:border-amber-500 hover:bg-slate-50 transition-all duration-300 flex flex-col h-full shadow-sm">
+              <div class="w-12 h-12 bg-amber-100 text-amber-600 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                <i class="fab fa-js-square text-xl"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-4 uppercase tracking-tight">JS Ecosystem</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-amber-50 text-amber-700 text-[10px] font-bold border border-amber-100 uppercase">React.js / Next.js</span>
+                <span class="px-2 py-1 bg-amber-50 text-amber-700 text-[10px] font-bold border border-amber-100 uppercase">TypeScript</span>
+                <span class="px-2 py-1 bg-amber-50 text-amber-700 text-[10px] font-bold border border-amber-100 uppercase">Node / Express</span>
+                <span class="px-2 py-1 bg-amber-50 text-amber-700 text-[10px] font-bold border border-amber-100 uppercase">ES6+ / Async JS</span>
+                <span class="px-2 py-1 bg-amber-50 text-amber-700 text-[10px] font-bold border border-amber-100 uppercase">Redux / Context</span>
+              </div>
+            </div>
+
+            <div class="group p-8 border border-slate-200 hover:border-indigo-500 hover:bg-slate-50 transition-all duration-300 flex flex-col h-full shadow-sm">
+              <div class="w-12 h-12 bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                <i class="fab fa-laravel text-2xl"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-4 uppercase tracking-tight">Scalable Backend</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-indigo-50 text-indigo-700 text-[10px] font-bold border border-indigo-100 uppercase">PHP Laravel</span>
+                <span class="px-2 py-1 bg-indigo-50 text-indigo-700 text-[10px] font-bold border border-indigo-100 uppercase">MySQL Optimization</span>
+                <span class="px-2 py-1 bg-indigo-50 text-indigo-700 text-[10px] font-bold border border-indigo-100 uppercase">Redis Caching</span>
+                <span class="px-2 py-1 bg-indigo-50 text-indigo-700 text-[10px] font-bold border border-indigo-100 uppercase">Restful API's</span>
+              </div>
+            </div>
+
+            <div class="group p-8 border border-slate-200 hover:border-emerald-500 hover:bg-slate-50 transition-all duration-300 flex flex-col h-full shadow-sm">
+              <div class="w-12 h-12 bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                <i class="fas fa-terminal text-xl"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-4 uppercase tracking-tight">DevOps & Cloud</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-100 uppercase">Linux / SSH</span>
+                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-100 uppercase">Docker</span>
+                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-100 uppercase">Git Actions</span>
+                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-100 uppercase">Servers /VPS/Cpanel</span>
+                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-100 uppercase">DNS Mgmt</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-1">
+          <div class="sticky top-28 space-y-6">
+            <div class="flex items-center justify-between">
+              <div class="">
+                <h3 class="text-xl font-black text-slate-900 uppercase tracking-tighter italic underline decoration-blue-600 underline-offset-8">Deployments</h3>
+                <p class="text-slate-500 mt-2 mono text-xs tracking-[0.3em] uppercase">// Work with </p>
+              </div>
+              
+              <div class="flex gap-1">
+                <div class="swiper-button-prev-custom cursor-pointer w-7 h-7 border border-slate-200 flex items-center justify-center hover:bg-slate-900 hover:text-white transition">
+                  <i class="fas fa-chevron-up text-[10px]"></i>
+                </div>
+                <div class="swiper-button-next-custom cursor-pointer w-7 h-7 border border-slate-200 flex items-center justify-center hover:bg-slate-900 hover:text-white transition">
+                  <i class="fas fa-chevron-down text-[10px]"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper compactDeploymentSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="p-4 bg-white border border-slate-100 hover:border-blue-600 group transition-all h-full shadow-sm flex flex-col gap-2">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 flex-shrink-0 bg-slate-900 flex items-center justify-center text-[10px] text-white font-bold">SM</div>
+                      <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-tight">Stockmed Ecosystem</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-500 leading-relaxed line-clamp-2 italic">Strategic healthcare CRM managing high-concurrency patient records.</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="p-4 bg-white border border-slate-100 hover:border-blue-600 group transition-all h-full shadow-sm flex flex-col gap-2">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 flex-shrink-0 bg-blue-600 flex items-center justify-center text-white"><i class="fas fa-building text-[10px]"></i></div>
+                      <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-tight">S.D. Corp Mumbai</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-500 leading-relaxed line-clamp-2 italic">Custom PHP CRM system built for real-estate management automation.</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="p-4 bg-white border border-slate-100 hover:border-blue-600 group transition-all h-full shadow-sm flex flex-col gap-2">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 flex-shrink-0 bg-slate-800 flex items-center justify-center text-white"><i class="fas fa-rocket text-[10px]"></i></div>
+                      <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-tight">SEO Engine</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-500 leading-relaxed line-clamp-2 italic">Mass deployment logic for automated SEO platforms.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button onclick="toggleModal()" class="w-full bg-slate-950 text-white py-4 font-bold hover:bg-blue-600 transition-all uppercase text-[10px] tracking-[0.25em]">
+              Let's Talk Business
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ 
+  <!-- experiance section -->
+  <section id="experience" class="py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-16">
+
+        <div class="lg:col-span-2 space-y-10">
+          <div class="mb-10">
+            <h2 class="text-xl md:text-3xl font-black text-slate-900 uppercase tracking-tighter italic">Professional_Timeline</h2>
+            <div class="h-1 w-20 bg-blue-600 mt-2"></div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="bg-white p-8 border-l-4 border-blue-600 shadow-sm group hover:shadow-md transition-all">
+              <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-2">
+                <h3 class="text-xxl md:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors ">Sr. Full-Stack Developer (Tech Head)</h3>
+                <span class="mono text-[10px] font-bold text-slate-500 bg-slate-100 px-3 py-1 uppercase tracking-widest">Aug 2023 — Present</span>
+              </div>
+              <p class="text-blue-600 font-bold text-xs mb-4 flex items-center gap-2">
+                Stockmed Network Pvt. Ltd. 
+                <a href="https://www.stockmed.com/" target="_blank" class="text-slate-300 hover:text-blue-600 transition-colors"><i class="fas fa-external-link-alt text-[10px]"></i></a>
+              </p>
+              <p class="text-slate-600 text-sm leading-relaxed max-w-2xl">
+                Directing technical strategy and full-stack development for enterprise healthcare ecosystems. Leading the architecture of high-concurrency Web Portals with a focus on <span class="font-bold text-slate-900">Laravel/React stability</span> and VPS performance optimization.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 border-l-4 border-slate-300 shadow-sm group hover:border-blue-400 hover:shadow-md transition-all">
+              <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-2">
+                <h3 class="text-xxl md:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors ">Sr. Full-Stack Developer</h3>
+                <span class="mono text-[10px] font-bold text-slate-400 bg-slate-100 px-3 py-1 uppercase tracking-widest">Mar 2022 — Jul 2023</span>
+              </div>
+              <p class="text-slate-500 font-bold text-xs mb-4 flex items-center gap-2">
+                InstaVyapar.com 
+                <a href="https://www.instavyapar.com/" target="_blank" class="text-slate-300 hover:text-blue-600 transition-colors"><i class="fas fa-external-link-alt text-[10px]"></i></a>
+              </p>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Engineered custom CMS solutions and successfully deployed <span class="text-slate-900 font-semibold">130+ SEO-integrated platforms</span>. Managed cross-functional team workflows and multi-server deployments.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 border-l-4 border-slate-300 shadow-sm opacity-80 hover:opacity-100 transition-opacity">
+              <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-2">
+                <h3 class="text-xxl md:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors ">Web Developer</h3>
+                <span class="mono text-[10px] font-bold text-slate-400 bg-slate-100 px-3 py-1 uppercase tracking-widest">Aug 2021 — Feb 2022</span>
+              </div>
+              <p class="text-slate-500 font-bold text-xs mb-4 flex items-center gap-2">
+                S.D. Corporation Pvt. Ltd. 
+                <a href="https://www.shapoorjipallonji.com/" target="_blank" class="text-slate-300 hover:text-blue-600 transition-colors"><i class="fas fa-external-link-alt text-[10px]"></i></a>
+              </p>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Core PHP development for internal ERP/Management systems and advanced MySQL database query optimization.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-1">
+          <div class="sticky top-28 space-y-6">
+            <div class="mb-6">
+              <span class="mono text-[9px] font-black text-blue-600 tracking-[0.5em] uppercase">Foundation_Protocol</span>
+              <h2 class="text-xl font-black text-slate-900 uppercase tracking-tighter italic mt-1">Background_&_Track</h2>
+            </div>
+
+            <div class="space-y-4 fade-in">
+              <div class="p-6 bg-white border border-slate-200 hover:border-blue-600 transition-colors flex items-center gap-5 shadow-sm">
+                <i class="fab fa-java text-3xl text-slate-900"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm uppercase">Java Programming</h4>
+                  <p class="text-[9px] text-slate-400 mono uppercase mt-1">Certified Developer</p>
+                </div>
+              </div>
+
+              <div class="group relative bg-white border border-slate-200 p-8 hover:border-blue-600 transition-all shadow-sm">
+                <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
+                  <i class="fas fa-microchip text-4xl text-blue-600"></i>
+                </div>
+                <span class="inline-block px-3 py-1 bg-slate-950 text-white text-[9px] font-bold uppercase tracking-widest mb-4">Core_Engineering</span>
+                <p class="mono text-[10px] text-blue-600 font-bold mb-1">2017 — 2020</p>
+                <h3 class="text-lg font-black text-slate-900 uppercase">B. Tech <span class="text-slate-400">(Incomplete)</span></h3>
+                <p class="text-[10px] font-bold text-slate-500 mt-1 uppercase tracking-tight italic">AKTU, Uttar Pradesh</p>
+                <div class="h-[1px] w-full bg-slate-100 my-4"></div>
+                <p class="text-xs text-slate-500 leading-relaxed italic">
+                  Focus on Low-level Systems Architecture and Algorithmic Logic.
+                </p>
+              </div>
+
+              <div class="group relative bg-white border border-slate-200 p-8 hover:border-blue-600 transition-all shadow-sm">
+                <p class="mono text-[9px] text-slate-500 font-bold mb-1">2015 — 2017</p>
+                <h3 class="text-base font-black text-slate-600 uppercase">Intermediate</h3>
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-4 underline underline-offset-4">Mathematics & Physics Foundation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- gallery and archivement section -->
+  <section id="gallery" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <h2 class="text-xl md:text-3xl font-black text-slate-900 uppercase tracking-tighter italic border-b-4 border-blue-600 inline-block">
+            Archives_&_Milestones
+          </h2>
+          <p class="text-slate-500 mt-2 mono text-[10px] tracking-[0.3em] uppercase">// 5.5 Years of Technical Evidence</p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 font-mono text-[10px] font-bold">
+          <button onclick="filterGallery('all')" class="filter-btn active bg-slate-950 text-white px-6 py-2 border border-slate-950 uppercase tracking-widest hover:bg-blue-600 transition duration-300">All_Units</button>
+          <button onclick="filterGallery('cert')" class="filter-btn bg-white text-slate-500 px-6 py-2 border border-slate-200 uppercase tracking-widest hover:border-slate-950 transition duration-300">Certifications</button>
+          <button onclick="filterGallery('event')" class="filter-btn bg-white text-slate-500 px-6 py-2 border border-slate-200 uppercase tracking-widest hover:border-slate-950 transition duration-300">Events</button>
+          <button onclick="filterGallery('dev')" class="filter-btn bg-white text-slate-500 px-6 py-2 border border-slate-200 uppercase tracking-widest hover:border-slate-950 transition duration-300">Developments</button>
+        </div>
+      </div>
+
+      <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+        
+        <div class="gallery-item cert col-span-2 row-span-2 relative group overflow-hidden cursor-zoom-in border border-slate-100"
+          onclick="openLightbox('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200', 'Advanced Java Certification')">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
+          <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <p class="text-[10px] mono text-blue-400 font-bold uppercase tracking-[0.4em] mb-2">Protocol_01</p>
+            <h4 class="text-white text-2xl font-black uppercase tracking-tighter">Java Enterprise Specialist</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item dev relative group overflow-hidden cursor-zoom-in border border-slate-200 bg-slate-50"
+          onclick="openLightbox('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200', 'CRM Architecture Design')">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=500" class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
+          <div class="absolute bottom-0 left-0 right-0 p-3 bg-blue-600 text-white text-[9px] font-black uppercase text-center translate-y-full group-hover:translate-y-0 transition-transform">
+            View_System_Design
+          </div>
+        </div>
+        
+        <div class="gallery-item event relative group overflow-hidden cursor-zoom-in border border-slate-200"
+          onclick="openLightbox('https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200', 'Tech Seminar Speaker')">
+          <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+          <div class="absolute top-0 right-0 bg-slate-950 text-white text-[8px] font-bold px-3 py-1 uppercase tracking-widest">
+            Event_2022
+          </div>
+        </div>
+
+        <div class="gallery-item event relative group overflow-hidden cursor-zoom-in border border-slate-200"
+          onclick="openLightbox('https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200', 'Student Management Logic')">
+          <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+          <div class="absolute bottom-4 left-4 text-white z-10">
+            <p class="font-black text-[10px] uppercase bg-blue-600 px-2 py-1 tracking-widest">Backend_Logic</p>
+          </div>
+        </div>
+
+        <div class="gallery-item cert relative group overflow-hidden cursor-zoom-in border border-slate-200"
+          onclick="openLightbox('https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1200', 'Web Architecture Cert')">
+          <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="enquiryModal" class="hidden fixed inset-0 z-[150] flex items-center justify-center p-2 md:p-4">
+    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md" onclick="toggleModal()"></div>
+
+    <div class="relative bg-white w-full max-w-xl shadow-2xl overflow-hidden transform transition-all scale-95 opacity-0 border border-slate-800" id="modalContent">
+      <button onclick="toggleModal()" class="absolute top-4 right-4 z-20 text-slate-400 hover:text-slate-950 transition-colors">
+        <i class="fas fa-times text-base"></i>
+      </button>
+
+      <div class="grid md:grid-cols-5">
+        <div class="md:col-span-2 bg-slate-950 p-6 md:p-8 text-white flex flex-col justify-between border-r border-slate-800">
+          <div>
+            <h2 class="text-lg font-black italic uppercase tracking-tighter text-slate-100 mb-1">Direct_Lines</h2>
+            <p class="text-slate-600 text-[8px] mono tracking-widest uppercase mb-8">// Secured_Nodes</p>
+
+            <div class="space-y-6">
+              <a href="mailto:rajweb7268@gmail.com" class="flex items-center gap-3 group">
+                <div class="w-8 h-8 bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-slate-500 transition-colors">
+                  <i class="fas fa-envelope text-[10px] text-slate-400"></i>
+                </div>
+                <div class="overflow-hidden">
+                  <p class="text-[7px] uppercase text-slate-500 font-bold tracking-widest mb-0.5">Mail_Server</p>
+                  <p class="mono text-[10px] text-slate-300 truncate">rajweb7268@gmail.com</p>
+                </div>
+              </a>
+
+              <a href="tel:+919889583844" class="flex items-center gap-3 group">
+                <div class="w-8 h-8 bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-slate-500 transition-colors">
+                  <i class="fas fa-phone-alt text-[10px] text-slate-400"></i>
+                </div>
+                <div>
+                  <p class="text-[7px] uppercase text-slate-500 font-bold tracking-widest mb-0.5">Voice_Line</p>
+                  <p class="mono text-[10px] text-slate-300">+91-9889583844</p>
+                </div>
+              </a>
+              
+              <a href="https://wa.me/919889583844" target="_blank" class="flex items-center gap-3 group">
+                <div class="w-8 h-8 bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-emerald-500 transition-colors">
+                  <i class="fab fa-whatsapp text-xs text-slate-400 group-hover:text-emerald-500"></i>
+                </div>
+                <div>
+                  <p class="text-[7px] uppercase text-slate-500 font-bold tracking-widest mb-0.5">WhatsApp</p>
+                  <p class="mono text-[10px] text-slate-300">Sync_Active</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-4 border-t border-slate-900 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 bg-emerald-500 animate-pulse"></span>
+            <p class="text-slate-600 text-[8px] font-mono uppercase tracking-tighter">
+              System_Status: <span class="text-slate-400">Online</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 p-6 md:p-8 bg-white">
+          <h3 class="text-base font-black text-slate-900 uppercase tracking-tighter mb-5">Transmission_Form</h3>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <div class="space-y-1">
+              <label class="text-[8px] font-black uppercase tracking-widest text-slate-400 ml-0.5 italic">01_Identity</label>
+              <input type="text" required 
+                class="w-full bg-slate-50 border border-slate-200 px-3 py-2.5 text-[11px] focus:border-slate-900 outline-none transition font-bold placeholder:text-slate-300 placeholder:font-mono placeholder:text-[9px] placeholder:uppercase" 
+                placeholder="Enter_Full_Name">
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[8px] font-black uppercase tracking-widest text-slate-400 ml-0.5 italic">02_Endpoint</label>
+              <input type="email" required 
+                class="w-full bg-slate-50 border border-slate-200 px-3 py-2.5 text-[11px] focus:border-slate-900 outline-none transition font-bold placeholder:text-slate-300 placeholder:font-mono placeholder:text-[9px] placeholder:uppercase" 
+                placeholder="Email@Address.com">
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[8px] font-black uppercase tracking-widest text-slate-400 ml-0.5 italic">03_Payload</label>
+              <textarea rows="2" required 
+                class="w-full bg-slate-50 border border-slate-200 px-3 py-2.5 text-[11px] focus:border-slate-900 outline-none transition resize-none font-bold placeholder:text-slate-300 placeholder:font-mono placeholder:text-[9px] placeholder:uppercase" 
+                placeholder="Define_Requirements..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" 
+              class="w-full bg-slate-950 text-white py-3.5 text-[10px] font-black uppercase tracking-[0.3em] hover:bg-slate-800 transition mt-2">
+              Send_Packet <i class="fas fa-arrow-right ml-2 text-[8px]"></i>
+            </button>
+          </form>
+
+          <div id="successMsg" class="hidden text-center py-8">
+            <i class="fas fa-check text-emerald-500 text-xl mb-2"></i>
+            <h3 class="text-xs font-black uppercase tracking-widest">Data_Received</h3>
+            <p class="text-slate-500 text-[8px] mt-1 mono uppercase tracking-widest">Closing_Tunnel...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lightbox" class="fixed inset-0 z-[200] bg-slate-950/98 backdrop-blur-xl hidden flex-col items-center justify-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-red-500 md:text-white text-3xl z-[210] p-4">
+      <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="relative w-full max-w-5xl flex flex-col items-center">
+      <img id="lightboxImg" src="" class="max-h-[70vh] md:max-h-[80vh] w-auto max-w-full border border-slate-800 shadow-2xl object-contain">
+      
+      <div class="mt-6 text-center px-4">
+        <p id="lightboxCaption" class="text-white font-black text-sm md:text-lg uppercase tracking-tighter italic"></p>
+        <div class="h-1 w-12 bg-blue-600 mx-auto mt-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="mono text-[10px] text-slate-400 uppercase tracking-[0.4em] font-bold">
+        © 2026 Rajkumar Gautam // Full-Stack Web Expert & Scalability Specialist
+      </p>
+      <div class="flex gap-8">
+        <a href="https://www.linkedin.com/in/raj-kumar-gautam-6ab847202" class="text-slate-400 hover:text-blue-600 transition-colors text-[10px] font-black uppercase tracking-widest">LinkedIn</a>
+        <a href="https://github.com/rajweb0207" class="text-slate-400 hover:text-blue-600 transition-colors text-[10px] font-black uppercase tracking-widest">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
