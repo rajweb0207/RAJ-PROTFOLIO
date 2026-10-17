@@ -133,73 +133,85 @@
 
     // ---- live enquiry submmtion ----
     
-    const LEAD_API_URL = "https://apidev.inertialtech.com/api/v1/leads/store";
-
+    // Handle Form Submission
     async function handleFormSubmit(event) {
       event.preventDefault();
 
       const form = document.getElementById("contactForm");
       const submitBtn = document.getElementById("submitBtn");
+      const formStatus = document.getElementById("formStatus");
       const successMsg = document.getElementById("successMsg");
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+      const name = document.getElementById("contactName").value.trim();
+      const email = document.getElementById("contactEmail").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
 
-      const inputs = form.querySelectorAll("input, textarea");
+      // Reset status
+      formStatus.className = "hidden text-center text-[9px] font-bold uppercase tracking-widest";
+      formStatus.textContent = "";
 
-      const payload = {
-        name: inputs[0].value.trim(),
-        email: inputs[1].value.trim(),
-        message: inputs[2].value.trim()
-      };
-
-      const originalButtonHTML = submitBtn.innerHTML;
-
+      // Lock button and show loading state
+      const originalBtnHtml = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
+      submitBtn.innerHTML = `<span>TRANSMITTING...</span> <i class="fas fa-spinner fa-spin ml-2 text-[8px]"></i>`;
+
+      // Extract UTM tags if visitor landed via marketing link
+      const urlParams = new URLSearchParams(window.location.search);
+      const utm_params = {};
+      ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].forEach((key) => {
+        if (urlParams.has(key)) utm_params[key] = urlParams.get(key);
+      });
 
       try {
-        const response = await fetch(LEAD_API_URL, {
+        const response = await fetch("https://apidev.inertialtech.com/api/v1/leads/store", {
           method: "POST",
           headers: {
+            "Accept": "application/json",
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            "X-Requested-With": "XMLHttpRequest"
           },
-          body: JSON.stringify(payload)
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: "N/A", // Portfolio contact modal doesn't have phone input
+            interested_in: "Portfolio Direct Enquiry",
+            source: "github_portfolio",
+            message: message,
+            utm_parameters: utm_params
+          })
         });
 
-        const result = await response.json().catch(() => null);
+        const result = await response.json();
 
-        if (!response.ok) {
-          throw new Error(
-            result?.message || `Request failed (${response.status})`
-          );
+        if (response.ok && result.success) {
+          // Swap form with success state
+          form.classList.add("hidden");
+          successMsg.classList.remove("hidden");
+          form.reset();
+
+          // Automatically close after 3 seconds
+          setTimeout(() => {
+            toggleModal();
+          }, 3000);
+        } else {
+          // Validation or backend error
+          let errorMsg = result.message || "TRANSMISSION_FAILED";
+          if (response.status === 422 && result.errors) {
+            errorMsg = Object.values(result.errors)[0][0];
+          }
+          formStatus.className = "block text-center text-[9px] font-bold uppercase tracking-widest text-rose-500 mt-2";
+          formStatus.textContent = `⚠ ${errorMsg}`;
         }
-
-        // Show success only after the API confirms success.
-        form.classList.add("hidden");
-        successMsg.classList.remove("hidden");
-
-        console.log("Lead submitted successfully", result);
-
-      } catch (error) {
-        console.error("Lead submission failed:", error);
-
-        const formStatus = document.getElementById("formStatus");
-
-        formStatus.textContent =
-          "Submission_Failed. Please try again.";
-        formStatus.classList.remove("hidden", "text-emerald-600");
-        formStatus.classList.add("text-red-600");
-
+      } catch (err) {
+        formStatus.className = "block text-center text-[9px] font-bold uppercase tracking-widest text-rose-500 mt-2";
+        formStatus.textContent = "⚠ UPLINK_OFFLINE: UNABLE TO REACH API CLUSTER";
       } finally {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = originalButtonHTML;
+        submitBtn.innerHTML = originalBtnHtml;
       }
     }
 
+    // Reset form back to default input state
     function resetContactForm() {
       const form = document.getElementById("contactForm");
       const successMsg = document.getElementById("successMsg");
@@ -208,8 +220,7 @@
       form.reset();
       form.classList.remove("hidden");
       successMsg.classList.add("hidden");
-
+      formStatus.className = "hidden text-center text-[9px] font-bold uppercase tracking-widest";
       formStatus.textContent = "";
-      formStatus.classList.add("hidden");
     }
 

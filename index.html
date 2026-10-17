@@ -25,7 +25,7 @@
       <div class="hidden md:flex items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500">
         <a href="#stack" class="hover:text-blue-600 transition">Stack</a>
         <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-        <a href="#gallery" class="hover:text-blue-600 transition">Archive</a>
+        <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
         <button onclick="toggleModal()" class="bg-slate-900 text-white px-6 py-2.5 hover:bg-blue-600 transition uppercase tracking-tighter font-black">Hire_Me</button>
       </div>
 
@@ -55,9 +55,8 @@
         </h1>
         
         <p class="text-base md:text-lg text-slate-600 mb-8 leading-relaxed max-w-xl">
-          Senior Full-Stack Developer with <strong class="text-slate-900">5.5+ years</strong> of engineering excellence. Specialist in <strong class="text-slate-900">Laravel & Modern JavaScript Ecosystems</strong>, Server Management, and Advanced Architecture.
+          Senior Full-Stack Developer with <strong class="text-slate-900">6+ years</strong> of crafting high-performance, real-time, robust systems from concept to production. Architecting scalable backends with <strong class="text-slate-900">Laravel & Node.js</strong>, dynamic frontends in <strong class="text-slate-900">React & TypeScript</strong>, and resilient <strong class="text-slate-900">Cloud & Linux DevOps</strong>.
         </p>
-
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="https://www.linkedin.com/in/raj-kumar-gautam-6ab847202" target="_blank"
             class="w-full sm:w-auto bg-slate-950 text-white px-8 py-3.5 font-bold text-sm uppercase tracking-widest hover:bg-blue-600 transition flex items-center justify-center gap-3 shadow-lg shadow-slate-200">
@@ -89,10 +88,10 @@
               {</code>
             <code class="text-slate-300 block pl-4 mono text-xs md:text-sm">
               public $experience = 
-              <span class="text-green-400">"5.5 + Years"</span>
+              <span class="text-green-400">"6 + Years"</span>
               ;
             </code>
-            <code class="text-slate-300 block pl-4 mono text-xs md:text-sm">public $stack = [<span class="text-green-400">'Laravel', 'React', 'Node', 'Python'</span>];</code>
+            <code class="text-slate-300 block pl-4 mono text-xs md:text-sm">public $stack = [<span class="text-green-400">'Laravel', 'React', 'TypeScript', 'NodeJs', 'Python'</span>];</code>
             <code class="text-blue-400 block mono text-xs md:text-sm">}</code>
           </div>
           
@@ -579,11 +578,11 @@
           <h2 class="text-xl md:text-3xl font-black text-slate-900 uppercase tracking-tighter italic border-b-4 border-blue-600 inline-block">
             Archives_&_Milestones
           </h2>
-          <p class="text-slate-500 mt-2 mono text-[10px] tracking-[0.3em] uppercase">// 5.5 Years of Technical Evidence</p>
+          <p class="text-slate-500 mt-2 mono text-[10px] tracking-[0.3em] uppercase">// 6+ Years of Technical Evidence</p>
         </div>
 
         <div class="flex flex-wrap gap-2 font-mono text-[10px] font-bold">
-          <button onclick="filterGallery('all')" class="filter-btn active bg-slate-950 text-white px-6 py-2 border border-slate-950 uppercase tracking-widest hover:bg-blue-600 transition duration-300">All_Units</button>
+          <button onclick="filterGallery('all')" class="filter-btn active bg-slate-950 text-white px-6 py-2 border border-slate-950 uppercase tracking-widest hover:bg-blue-600 transition duration-300">All</button>
           <button onclick="filterGallery('cert')" class="filter-btn bg-white text-slate-500 px-6 py-2 border border-slate-200 uppercase tracking-widest hover:border-slate-950 transition duration-300">Certifications</button>
           <button onclick="filterGallery('event')" class="filter-btn bg-white text-slate-500 px-6 py-2 border border-slate-200 uppercase tracking-widest hover:border-slate-950 transition duration-300">Events</button>
           <button onclick="filterGallery('dev')" class="filter-btn bg-white text-slate-500 px-6 py-2 border border-slate-200 uppercase tracking-widest hover:border-slate-950 transition duration-300">Developments</button>
@@ -593,7 +592,7 @@
       <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
         
         <div class="gallery-item cert col-span-2 row-span-2 relative group overflow-hidden cursor-zoom-in border border-slate-100"
-          onclick="openLightbox('assets/imgs/Arvhivement.jpeg', 'Advanced Java Certification')">
+          onclick="openLightbox('assets/imgs/Arvhivement.jpeg', 'Best Developer and Tech Lead-2024, Manarti Group , New Delhi')">
           <img src="assets/imgs/Arvhivement.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
           <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
             <p class="text-[10px] mono text-blue-400 font-bold uppercase tracking-[0.4em] mb-2">2024</p>
@@ -601,16 +600,16 @@
           </div>
         </div>
 
-        <div class="gallery-item dev relative group overflow-hidden cursor-zoom-in border border-slate-200 bg-slate-50"
-          onclick="openLightbox('assets/imgs/Best_Student.jpg', 'CRM Architecture Design')">
+        <div class="gallery-item cert relative group overflow-hidden cursor-zoom-in border border-slate-200 bg-slate-50"
+          onclick="openLightbox('assets/imgs/Best_Student.jpg', 'Best Of the Batch-2019 Vnd Institute Lucknow')">
           <img src="assets/imgs/Best_Student.jpg" class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
           <div class="absolute bottom-0 left-0 right-0 p-3 bg-blue-600 text-white text-[9px] font-black uppercase text-center translate-y-full group-hover:translate-y-0 transition-transform">
             Best Student_2019
           </div>
         </div>
         
-        <div class="gallery-item event relative group overflow-hidden cursor-zoom-in border border-slate-200"
-          onclick="openLightbox('assets/imgs/Office_time.jpeg', 'Tech Seminar Speaker')">
+        <div class="gallery-item dev relative group overflow-hidden cursor-zoom-in border border-slate-200"
+          onclick="openLightbox('assets/imgs/Office_time.jpeg', 'Stockment Network Development')">
           <img src="assets/imgs/Office_time.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
           <div class="absolute top-0 right-0 bg-slate-950 text-white text-[8px] font-bold px-3 py-1 uppercase tracking-widest">
             2023
@@ -618,16 +617,19 @@
         </div>
 
         <div class="gallery-item event relative group overflow-hidden cursor-zoom-in border border-slate-200"
-          onclick="openLightbox('assets/imgs/Events.jpeg', 'Student Management Logic')">
+          onclick="openLightbox('assets/imgs/Events.jpeg', 'Manarti Group Annual Event-2023')">
           <img src="assets/imgs/Events.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
           <div class="absolute bottom-4 left-4 text-white z-10">
             <p class="font-black text-[10px] uppercase bg-blue-600 px-2 py-1 tracking-widest">2025</p>
           </div>
         </div>
 
-        <div class="gallery-item cert relative group overflow-hidden cursor-zoom-in border border-slate-200"
-          onclick="openLightbox('assets/imgs/Man_of_the_match_manarti.jpg', 'Web Architecture Cert')">
+        <div class="gallery-item event relative group overflow-hidden cursor-zoom-in border border-slate-200"
+          onclick="openLightbox('assets/imgs/Man_of_the_match_manarti.jpg', 'Man Of The Match Golden Egle-2022')">
           <img src="assets/imgs/Man_of_the_match_manarti.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+          <div class="absolute bottom-4 left-4 text-white z-10">
+            <p class="font-black text-[10px] uppercase bg-blue-600 px-2 py-1 tracking-widest">2022</p>
+          </div>
         </div>
       </div>
     </div>
@@ -802,7 +804,7 @@
   <!-- --- LightBox Modal --- -->
   <div id="lightbox" class="fixed inset-0 z-[200] bg-slate-950/98 backdrop-blur-xl hidden flex-col items-center justify-center p-4">
     <button onclick="closeLightbox()" class="absolute top-6 right-6 text-red-500 md:text-white text-3xl z-[210] p-4">
-      <i class="fas fa-times"></i>
+      <i class="fas fa-times text-red-500 md:text-whit"></i>
     </button>
     
     <div class="relative w-full max-w-5xl flex flex-col items-center">
