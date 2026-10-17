@@ -130,3 +130,86 @@
         }
       });
     });
+
+    // ---- live enquiry submmtion ----
+    
+    const LEAD_API_URL = "https://apidev.inertialtech.com/api/v1/leads/store";
+
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+
+      const form = document.getElementById("contactForm");
+      const submitBtn = document.getElementById("submitBtn");
+      const successMsg = document.getElementById("successMsg");
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const inputs = form.querySelectorAll("input, textarea");
+
+      const payload = {
+        name: inputs[0].value.trim(),
+        email: inputs[1].value.trim(),
+        message: inputs[2].value.trim()
+      };
+
+      const originalButtonHTML = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      try {
+        const response = await fetch(LEAD_API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json().catch(() => null);
+
+        if (!response.ok) {
+          throw new Error(
+            result?.message || `Request failed (${response.status})`
+          );
+        }
+
+        // Show success only after the API confirms success.
+        form.classList.add("hidden");
+        successMsg.classList.remove("hidden");
+
+        console.log("Lead submitted successfully", result);
+
+      } catch (error) {
+        console.error("Lead submission failed:", error);
+
+        const formStatus = document.getElementById("formStatus");
+
+        formStatus.textContent =
+          "Submission_Failed. Please try again.";
+        formStatus.classList.remove("hidden", "text-emerald-600");
+        formStatus.classList.add("text-red-600");
+
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalButtonHTML;
+      }
+    }
+
+    function resetContactForm() {
+      const form = document.getElementById("contactForm");
+      const successMsg = document.getElementById("successMsg");
+      const formStatus = document.getElementById("formStatus");
+
+      form.reset();
+      form.classList.remove("hidden");
+      successMsg.classList.add("hidden");
+
+      formStatus.textContent = "";
+      formStatus.classList.add("hidden");
+    }
+
