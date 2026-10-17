@@ -44,21 +44,9 @@
         setTimeout(() => {
           modal.classList.add('hidden');
           document.body.classList.remove('modal-active');
+          resetContactForm();
         }, 200);
       }
-    }
-    // ------ from Handler -------
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Transmitting...';
-      btn.disabled = true;
-
-      setTimeout(() => {
-        document.getElementById('contactForm').classList.add('hidden');
-        document.getElementById('successMsg').classList.remove('hidden');
-      }, 1500);
     }
 
     // ---------- Gallery -------
